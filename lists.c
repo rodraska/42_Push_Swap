@@ -1,18 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   lists.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rreis-de <rreis-de@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 10:00:09 by rreis-de          #+#    #+#             */
-/*   Updated: 2023/01/13 14:06:07 by rreis-de         ###   ########.fr       */
+/*   Updated: 2023/01/14 17:31:29 by rreis-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list	*lstnew(int value);
+t_list	*lst_fill(int a, int b)
+{
+	t_list *new;
+	
+	new = lstnew(a);
+	a++;
+	while (a <= b)
+	{
+		lst_add_back(&new, a);
+		a++;
+	}
+	return (new);
+}
+
+void	lst_rev_iter(t_list *lst)
+{
+	lst = lstlast(lst);
+	while (lst)
+	{
+		lst->value *= 2;
+		lst = lst->previous;
+	}
+}
+
+void	lst_iter(t_list *lst)
+{
+	while (lst)
+	{
+		lst->value /= 2;
+		lst = lst->next;
+	}
+}
 
 void	lst_clear(t_list **lst)
 {
@@ -51,6 +82,7 @@ void	lst_add_back(t_list **lst, int value)
 	{
 		last = lstlast(*lst);
 		last->next = new;
+		new->previous = last;
 	}
 	else
 		*lst = new;
@@ -62,6 +94,7 @@ void	lst_add_front(t_list **lst, int value)
 	
 	new  = lstnew(value);
 	new->next = *lst;
+	(*lst)->previous = new;
 	*lst = new;
 }
 
@@ -74,18 +107,23 @@ t_list	*lstnew(int value)
 		return (NULL);
 	elem->value = value;
 	elem->next = NULL;
+	elem->previous = NULL;
 	return (elem);
 }
 
 int	main(void)
-{
-	t_list *a = lstnew(42);
-	
-	lst_add_front(&a, 31);
-	lst_add_back(&a, 88);
-	lst_clear(&a->next);
-	
-	printf("%d\n", a->value);
-	//printf("%d\n", a->next->value);
-	printf("%d\n", lstlast(a)->value);
+{	
+	t_list *a;
+	t_list *b;
+
+	a = lst_fill(1, 5);
+	b = lst_fill(42, 48);
+	rotate(&a);
+	push(&b, &a);
+	while (a)
+	{
+		printf("%d\n", a->value);
+		a = a->next;
+	}
+	return (0);
 }
