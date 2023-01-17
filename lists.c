@@ -111,7 +111,7 @@ t_list	*lstnew(int value)
 	return (elem);
 }
 
-int	main(void)
+/* int	main(void)
 {	
 	t_list *a;
 	t_list *b;
@@ -126,4 +126,4 @@ int	main(void)
 		a = a->next;
 	}
 	return (0);
-}
+} */
