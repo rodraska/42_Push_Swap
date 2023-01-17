@@ -32,6 +32,8 @@ t_list	*check_error(int ac, char **av)
 			if (num > 2147483647 || num < -2147483648)
 				return (NULL);
 		}
+		if (lst_duplicate(lst, num))
+			return (NULL);
 		lst_add_back(&lst, num);
 	}
 	return (lst);
@@ -73,7 +75,11 @@ int main(int ac, char **av)
 	a = check_error(ac, av);
 	b = NULL;
 	if (a == NULL)
+	{
 		printf("ERROR\n");
+		return (0);
+	}
+		
 	swap(a);
 	push(&a, &b);
 	push(&a, &b);

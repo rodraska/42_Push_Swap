@@ -12,6 +12,17 @@
 
 #include "push_swap.h"
 
+int		lst_duplicate(t_list *lst, int n)
+{
+	while (lst)
+	{
+		if (lst->value == n)
+			return (1);
+		lst = lst->next;
+	}
+	return (0);
+}
+
 t_list	*lst_fill(int a, int b)
 {
 	t_list *new;
