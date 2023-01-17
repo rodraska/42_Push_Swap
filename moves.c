@@ -6,7 +6,7 @@
 /*   By: rreis-de <rreis-de@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 14:49:55 by rreis-de          #+#    #+#             */
-/*   Updated: 2023/01/14 17:30:52 by rreis-de         ###   ########.fr       */
+/*   Updated: 2023/01/17 13:43:56 by rreis-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,17 @@ void	push(t_list **src, t_list **dst)
 	t_list	*tmp;
 
 	tmp = *src;
-	*src = tmp->next;
-	(*src)->previous = NULL;
+	if (tmp->next)
+	{
+		*src = tmp->next;
+		(*src)->previous = NULL;
+	}
+	else
+		*src = NULL;
 	tmp->next = *dst;
-	(*dst)->previous = tmp;
+	tmp->previous = NULL;
+	if (*dst)
+		(*dst)->previous = tmp;
 	*dst = tmp;
 }
 

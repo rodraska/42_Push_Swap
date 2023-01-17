@@ -6,7 +6,7 @@
 /*   By: rreis-de <rreis-de@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:16:03 by rreis-de          #+#    #+#             */
-/*   Updated: 2023/01/16 10:42:11 by rreis-de         ###   ########.fr       */
+/*   Updated: 2023/01/17 13:42:34 by rreis-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_list	*check_error(int ac, char **av)
 	t_list	*lst;
 
 	i = 0;
+	lst = NULL;
 	while (++i < ac)
 	{
 		j = -1;
@@ -31,10 +32,7 @@ t_list	*check_error(int ac, char **av)
 			if (num > 2147483647 || num < -2147483648)
 				return (NULL);
 		}
-		if (i == 1)
-			lst = lstnew(num);
-		else	
-			lst_add_back(&lst, num);
+		lst_add_back(&lst, num);
 	}
 	return (lst);
 }
@@ -67,16 +65,37 @@ long int	ft_atoi(char *str)
 
 int main(int ac, char **av)
 {
-	t_list *arr;
+	t_list *a;
+	t_list *b;
 
-	arr = check_error(ac, av);
-	if (arr == NULL)
+	if (ac == 1)
+		return (0);
+	a = check_error(ac, av);
+	b = NULL;
+	if (a == NULL)
 		printf("ERROR\n");
-	swap(arr);
-	while (arr != NULL)
+	swap(a);
+	push(&a, &b);
+	push(&a, &b);
+	push(&a, &b);
+	rotate(&a);
+	rotate(&b);
+	rev_rotate(&a);
+	rev_rotate(&b);
+	swap(a);
+	push(&b, &a);
+	push(&b, &a);
+	push(&b, &a);
+	while (a != NULL)
 	{
-		printf("%d\n", arr->value);
-		arr = arr->next;
+		printf("%d\n", a->value);
+		a = a->next;
+	}
+	printf("\n");
+	while (b != NULL)
+	{
+		printf("%d\n", b->value);
+		b = b->next;
 	}
 	return (0);
 }

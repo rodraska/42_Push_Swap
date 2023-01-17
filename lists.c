@@ -6,7 +6,7 @@
 /*   By: rreis-de <rreis-de@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 10:00:09 by rreis-de          #+#    #+#             */
-/*   Updated: 2023/01/14 17:31:29 by rreis-de         ###   ########.fr       */
+/*   Updated: 2023/01/17 11:54:11 by rreis-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,16 +114,8 @@ t_list	*lstnew(int value)
 /* int	main(void)
 {	
 	t_list *a;
-	t_list *b;
-
-	a = lst_fill(1, 5);
-	b = lst_fill(42, 48);
-	rotate(&a);
-	push(&b, &a);
-	while (a)
-	{
-		printf("%d\n", a->value);
-		a = a->next;
-	}
+	
+	a = NULL;
+	lst_add_back(&a, 45);
 	return (0);
 } */
