@@ -79,8 +79,9 @@ int main(int ac, char **av)
 		printf("ERROR\n");
 		return (0);
 	}
-		
-	swap(a);
+	//rotate(&a);
+	sort_3(&a);
+	/* swap(a);
 	push(&a, &b);
 	push(&a, &b);
 	push(&a, &b);
@@ -91,7 +92,7 @@ int main(int ac, char **av)
 	swap(a);
 	push(&b, &a);
 	push(&b, &a);
-	push(&b, &a);
+	push(&b, &a); */
 	while (a != NULL)
 	{
 		printf("%d\n", a->value);

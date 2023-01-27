@@ -43,4 +43,6 @@ long int	ft_atoi(char *str);
 t_list	*check_error(int ac, char **av);
 int		lst_duplicate(t_list *lst, int n);
 
+void    sort_3(t_list **lst);
+
 #endif
