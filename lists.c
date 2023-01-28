@@ -6,11 +6,53 @@
 /*   By: rreis-de <rreis-de@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 10:00:09 by rreis-de          #+#    #+#             */
-/*   Updated: 2023/01/17 11:54:11 by rreis-de         ###   ########.fr       */
+/*   Updated: 2023/01/28 18:04:51 by rreis-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int		lst_max(t_list *lst)
+{
+	int	max;
+
+	max = 0;
+	while (lst)
+	{
+		if (lst->value > max)
+			max = lst->value;
+		lst = lst->next;
+	}
+	return (max);
+}
+
+float	lst_average(t_list *lst)
+{
+	float	total;
+	int	size;
+
+	size = lst_size(lst);
+	total = 0;
+	while (lst)
+	{
+		total += lst->value;
+		lst = lst->next;
+	}
+	return (total / size);
+}
+
+int		lst_size(t_list *lst)
+{
+	int	size;
+
+	size = 0;
+	while (lst)
+	{
+		size++;
+		lst = lst->next;
+	}
+	return (size);
+}
 
 int		lst_duplicate(t_list *lst, int n)
 {
@@ -23,32 +65,11 @@ int		lst_duplicate(t_list *lst, int n)
 	return (0);
 }
 
-t_list	*lst_fill(int a, int b)
+int	lst_iter(t_list *lst)
 {
-	t_list *new;
-	
-	new = lstnew(a);
-	a++;
-	while (a <= b)
-	{
-		lst_add_back(&new, a);
-		a++;
-	}
-	return (new);
-}
+	int	size;
 
-void	lst_rev_iter(t_list *lst)
-{
-	lst = lstlast(lst);
-	while (lst)
-	{
-		lst->value *= 2;
-		lst = lst->previous;
-	}
-}
-
-void	lst_iter(t_list *lst)
-{
+	size = 0;
 	while (lst)
 	{
 		lst->value /= 2;

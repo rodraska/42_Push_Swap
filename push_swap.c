@@ -6,7 +6,7 @@
 /*   By: rreis-de <rreis-de@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:16:03 by rreis-de          #+#    #+#             */
-/*   Updated: 2023/01/17 13:42:34 by rreis-de         ###   ########.fr       */
+/*   Updated: 2023/01/28 18:07:34 by rreis-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,8 +79,6 @@ int main(int ac, char **av)
 		printf("ERROR\n");
 		return (0);
 	}
-	//rotate(&a);
-	sort_3(&a);
 	/* swap(a);
 	push(&a, &b);
 	push(&a, &b);
@@ -93,6 +91,7 @@ int main(int ac, char **av)
 	push(&b, &a);
 	push(&b, &a);
 	push(&b, &a); */
+	sort(&a, &b);
 	while (a != NULL)
 	{
 		printf("%d\n", a->value);
