@@ -12,6 +12,15 @@
 
 #include "push_swap.h"
 
+void	lst_print(t_list *lst)
+{
+	while (lst)
+	{
+		printf("%d\n", lst->value);
+		lst = lst->next;
+	}
+}
+
 int		lst_max(t_list *lst)
 {
 	int	max;
@@ -63,18 +72,6 @@ int		lst_duplicate(t_list *lst, int n)
 		lst = lst->next;
 	}
 	return (0);
-}
-
-int	lst_iter(t_list *lst)
-{
-	int	size;
-
-	size = 0;
-	while (lst)
-	{
-		lst->value /= 2;
-		lst = lst->next;
-	}
 }
 
 void	lst_clear(t_list **lst)
@@ -142,12 +139,3 @@ t_list	*lstnew(int value)
 	elem->previous = NULL;
 	return (elem);
 }
-
-/* int	main(void)
-{	
-	t_list *a;
-	
-	a = NULL;
-	lst_add_back(&a, 45);
-	return (0);
-} */

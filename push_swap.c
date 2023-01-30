@@ -79,29 +79,9 @@ int main(int ac, char **av)
 		printf("ERROR\n");
 		return (0);
 	}
-	/* swap(a);
-	push(&a, &b);
-	push(&a, &b);
-	push(&a, &b);
-	rotate(&a);
-	rotate(&b);
-	rev_rotate(&a);
-	rev_rotate(&b);
-	swap(a);
-	push(&b, &a);
-	push(&b, &a);
-	push(&b, &a); */
 	sort(&a, &b);
-	while (a != NULL)
-	{
-		printf("%d\n", a->value);
-		a = a->next;
-	}
-	printf("\n");
-	while (b != NULL)
-	{
-		printf("%d\n", b->value);
-		b = b->next;
-	}
+	//lst_print(a);
+	//printf("\n");
+	//lst_print(b);
 	return (0);
 }

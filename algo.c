@@ -13,24 +13,34 @@ void    sort_3(t_list **lst)
 void    sort(t_list **a, t_list **b)
 {
     int pos;
-    
-    while (lst_size((*a)) > 3)
+    int n;
+
+    n = 0;
+    while (lst_size((*a)) > 1)
     {
+        /* if (n > lst_size(*a))
+            push(a, b); */
         if ((*a)->value <= lst_average(*a))
+        {
             push(a, b);
+            n = 0;
+        }
         else
         {
-            printf("ola");
             rotate(a);
+            n++;
         }
-            
     }
-    sort_3(a);
+    //sort_3(a);
     while (*b)
     {
+        //lst_print(*b);
         pos = ft_cost(*b, (*a)->value);
+        //printf("pos: %d\n", pos);
+        //printf("\n");
         if (pos <= lst_size((*b)) / 2)
         {
+            //printf("menor\n");
             while (pos > 0)
             {
                 rotate(b);
@@ -39,13 +49,16 @@ void    sort(t_list **a, t_list **b)
         }
         else if (pos > lst_size((*b)) / 2)
         {
-            pos = lst_size((*b)) - pos + 1;
+            //printf("maior\n");
+            pos = lst_size((*b)) - pos;
+            //printf("pos: %d\n", pos);
             while (pos > 0)
             {
                 rev_rotate(b);
                 pos--;
             }
         }
+        //printf("\n");
         push(b, a);
     }
 }
@@ -62,7 +75,10 @@ int ft_cost(t_list *b, int top)
     while (b)
     {
         if (top - b->value < dif)
+        {
+            dif = top - b->value;
             pos = n;
+        }
         b = b->next;
         n++;
     }
