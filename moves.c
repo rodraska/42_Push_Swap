@@ -6,23 +6,23 @@
 /*   By: rreis-de <rreis-de@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 14:49:55 by rreis-de          #+#    #+#             */
-/*   Updated: 2023/01/28 17:43:46 by rreis-de         ###   ########.fr       */
+/*   Updated: 2023/01/30 16:11:17 by rreis-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap(t_list *lst)
+void	swap(t_list *lst, char *id)
 {
 	int		tmp;
 
 	tmp = lst->value;
 	lst->value = lst->next->value;
 	lst->next->value = tmp;
-	printf("swap\n");
+	ft_printf("%s\n", id);
 }
 
-void	push(t_list **src, t_list **dst)
+void	push(t_list **src, t_list **dst, char *id)
 {	
 	t_list	*tmp;
 
@@ -39,10 +39,10 @@ void	push(t_list **src, t_list **dst)
 	if (*dst)
 		(*dst)->previous = tmp;
 	*dst = tmp;
-	printf("push\n");
+	ft_printf("%s\n", id);
 }
 
-void	rotate(t_list **lst)
+void	rotate(t_list **lst, char *id)
 {
 	t_list	*last;
 	t_list	*tmp;
@@ -54,10 +54,10 @@ void	rotate(t_list **lst)
 	(*lst)->next = NULL;
 	tmp->previous = NULL;
 	*lst = tmp;
-	printf("rotate\n");
+	ft_printf("%s\n", id);
 }
 
-void	rev_rotate(t_list **lst)
+void	rev_rotate(t_list **lst, char *id)
 {
 	t_list	*last;
 
@@ -67,5 +67,5 @@ void	rev_rotate(t_list **lst)
 	last->previous = NULL;
 	(*lst)->previous = last;
 	*lst = last;
-	printf("rev rotate\n");
+	ft_printf("%s\n", id);
 }

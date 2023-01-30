@@ -5,48 +5,43 @@
 #                                                     +:+ +:+         +:+      #
 #    By: rreis-de <rreis-de@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/01/30 14:18:03 by rreis-de          #+#    #+#              #
-#    Updated: 2023/01/30 16:02:01 by rreis-de         ###   ########.fr        #
+#    Created: 2022/11/02 14:29:07 by rreis-de          #+#    #+#              #
+#    Updated: 2023/01/30 15:49:42 by rreis-de         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = push_swap
+NAME = printf
 
-CC = cc
+SRCS = ft_printf.c \
+		ft_letters.c \
+		ft_numbers.c \
+		ft_itoa.c \
+		ft_putchar_fd.c \
+		ft_putnbr_fd.c \
+		ft_putstr_fd.c \
+		ft_strlen.c
 
-CFLAGS = -Wall -Wextra -Werror
+CC		= cc
 
-RM = rm -f
+RM		= rm -f
 
-SRCS = algo.c \
-		lists.c \
-		moves.c \
-		push_swap.c \
-		printf/ft_letters.c \
-		printf/ft_numbers.c \
-		printf/ft_printf.c \
-		printf/ft_putchar_fd.c \
-		printf/ft_putstr_fd.c \
-		printf/ft_itoa.c \
-		printf/ft_strlen.c \
-		printf/ft_putnbr_fd.c \
-		
+CFLAGS	= -Wall -Wextra -Werror
 
-HEADERS = push_swap.h 
+HEADERS = ft_printf.h
 
-OBJS = $(SRCS:.c=.o)
+OBJS	= ${SRCS:.c=.o}
 
-all: $(NAME)
+all: ${NAME}
 
-$(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+${NAME}: ${OBJS}
+	$(CC) $(CFLAGS) ${OBJS} -o ${NAME} 
 
 clean:
-	$(RM) $(OBJS)
+	${RM} ${OBJS}
 
 fclean: clean
-	$(RM) $(NAME)
+	${RM} ${NAME}
 
 re: fclean all
 
-		
+.PHONY: all, clean, fclean, re

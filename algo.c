@@ -3,11 +3,11 @@
 void    sort_3(t_list **lst)
 {
     if ((*lst)->value > (*lst)->next->value)
-        swap(*lst);
+        swap(*lst, "sa");
     if ((*lst)->next->value > (*lst)->value && (*lst)->next->value > (*lst)->next->next->value)
-        rev_rotate(lst);
+        rev_rotate(lst, "rra");
     if ((*lst)->value > (*lst)->next->value)
-        swap(*lst);
+        swap(*lst, "sa");
 }
 
 void    sort(t_list **a, t_list **b)
@@ -22,12 +22,12 @@ void    sort(t_list **a, t_list **b)
             push(a, b); */
         if ((*a)->value <= lst_average(*a))
         {
-            push(a, b);
+            push(a, b, "pb");
             n = 0;
         }
         else
         {
-            rotate(a);
+            rotate(a, "ra");
             n++;
         }
     }
@@ -43,7 +43,7 @@ void    sort(t_list **a, t_list **b)
             //printf("menor\n");
             while (pos > 0)
             {
-                rotate(b);
+                rotate(b, "rb");
                 pos--;
             }
         }
@@ -54,12 +54,12 @@ void    sort(t_list **a, t_list **b)
             //printf("pos: %d\n", pos);
             while (pos > 0)
             {
-                rev_rotate(b);
+                rev_rotate(b, "rrb");
                 pos--;
             }
         }
         //printf("\n");
-        push(b, a);
+        push(b, a, "pa");
     }
 }
 
