@@ -6,7 +6,7 @@
 /*   By: rreis-de <rreis-de@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:16:03 by rreis-de          #+#    #+#             */
-/*   Updated: 2023/01/28 18:07:34 by rreis-de         ###   ########.fr       */
+/*   Updated: 2023/01/31 19:05:36 by rreis-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,8 +80,8 @@ int main(int ac, char **av)
 		return (0);
 	}
 	sort(&a, &b);
-	//lst_print(a);
-	//printf("\n");
-	//lst_print(b);
+	/* lst_print(a);
+	ft_printf("\n");
+	lst_print(b); */
 	return (0);
 }

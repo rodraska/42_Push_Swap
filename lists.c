@@ -6,7 +6,7 @@
 /*   By: rreis-de <rreis-de@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 10:00:09 by rreis-de          #+#    #+#             */
-/*   Updated: 2023/01/28 18:04:51 by rreis-de         ###   ########.fr       */
+/*   Updated: 2023/01/31 10:53:06 by rreis-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	lst_print(t_list *lst)
 {
 	while (lst)
 	{
-		printf("%d\n", lst->value);
+		ft_printf("%d\n", lst->value);
 		lst = lst->next;
 	}
 }

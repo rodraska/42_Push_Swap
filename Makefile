@@ -6,7 +6,7 @@
 #    By: rreis-de <rreis-de@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/30 14:18:03 by rreis-de          #+#    #+#              #
-#    Updated: 2023/01/30 16:02:01 by rreis-de         ###   ########.fr        #
+#    Updated: 2023/01/31 15:09:43 by rreis-de         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = push_swap
 
 CC = cc
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g3
 
 RM = rm -f
 

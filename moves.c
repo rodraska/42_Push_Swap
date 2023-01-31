@@ -6,7 +6,7 @@
 /*   By: rreis-de <rreis-de@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 14:49:55 by rreis-de          #+#    #+#             */
-/*   Updated: 2023/01/30 16:11:17 by rreis-de         ###   ########.fr       */
+/*   Updated: 2023/01/31 19:04:59 by rreis-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,20 +52,23 @@ void	rotate(t_list **lst, char *id)
 	last->next = *lst;
 	(*lst)->previous = last;
 	(*lst)->next = NULL;
-	tmp->previous = NULL;
 	*lst = tmp;
-	ft_printf("%s\n", id);
+	(*lst)->previous = NULL;
+	ft_printf("%s", id);
+	ft_printf("\n");
 }
 
 void	rev_rotate(t_list **lst, char *id)
 {
 	t_list	*last;
-
+	
 	last = lstlast(*lst);
-	last->previous->next = NULL;
+	if (last->previous)
+		last->previous->next = NULL;
 	last->next = *lst;
 	last->previous = NULL;
 	(*lst)->previous = last;
 	*lst = last;
-	ft_printf("%s\n", id);
+	ft_printf("%s", id);
+	ft_printf("\n");
 }

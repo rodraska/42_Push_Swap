@@ -6,7 +6,7 @@
 /*   By: rreis-de <rreis-de@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 09:55:51 by rreis-de          #+#    #+#             */
-/*   Updated: 2023/01/30 16:08:44 by rreis-de         ###   ########.fr       */
+/*   Updated: 2023/01/31 18:56:09 by rreis-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct s_list
 	int					value;
 	struct s_list		*next;
 	struct s_list		*previous;
+	int					move;
 }	t_list;
 
 t_list	*lstnew(int value);
@@ -47,6 +48,12 @@ int		lst_duplicate(t_list *lst, int n);
 
 void    sort_3(t_list **lst);
 void    sort(t_list **a, t_list **b);
-int ft_cost(t_list *b, int top);
+t_list	*cost_min(t_list *a, t_list *b);
+int	ft_cost(t_list **lst, t_list *elem);
+int	ft_bigger(int a, int b);
+int		best_path(t_list *a, t_list *b, t_list *elem, t_list *neigh);
+t_list	*best_neigh(t_list *a, t_list *b);
+void	ft_rotate(t_list **a, t_list **b, t_list *elem, t_list *neigh);
+
 
 #endif
