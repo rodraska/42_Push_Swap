@@ -24,10 +24,10 @@ void	ft_printf_d(int n, int *ptl)
 
 void	ft_printf_u(unsigned int n, int *ptl)
 {
-	if (n >= 0)
-		ft_itoa_base(n, "0123456789", ptl);
-	else if (n < 0)
-		ft_itoa_base(4294967296 - n, "0123456789", ptl);
+	//if (n >= 0)
+	ft_itoa_base(n, "0123456789", ptl);
+	//else if (n < 0)
+		//ft_itoa_base(4294967296 - n, "0123456789", ptl);
 }
 
 void	ft_itoa_base(unsigned long int n, char *base, int *ptl)

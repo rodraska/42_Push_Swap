@@ -31,6 +31,7 @@ t_list	*lstnew(int value);
 void	lst_add_front(t_list **lst, int value);
 void	lst_add_back(t_list **lst, int value);
 t_list	*lstlast(t_list *lst);
+t_list	*lstfirst(t_list *lst);
 void	lst_clear(t_list **lst);
 int		lst_size(t_list *lst);
 float	lst_average(t_list *lst);
@@ -54,6 +55,7 @@ int	ft_bigger(int a, int b);
 int		best_path(t_list *a, t_list *b, t_list *elem, t_list *neigh);
 t_list	*best_neigh(t_list *a, t_list *b);
 void	ft_rotate(t_list **a, t_list **b, t_list *elem, t_list *neigh);
+void	last_sort(t_list **lst);
 
 
 #endif

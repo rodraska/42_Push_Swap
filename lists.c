@@ -88,6 +88,19 @@ void	lst_clear(t_list **lst)
 	
 }
 
+t_list	*lstfirst(t_list *lst)
+{
+	t_list *first;
+
+	first = lst;
+	while (lst != NULL)
+	{
+		first = lst;
+		lst = lst->previous;
+	}
+	return (first);
+}
+
 t_list *lstlast(t_list *lst)
 {
 	t_list *last;

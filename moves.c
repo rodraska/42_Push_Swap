@@ -54,8 +54,8 @@ void	rotate(t_list **lst, char *id)
 	(*lst)->next = NULL;
 	*lst = tmp;
 	(*lst)->previous = NULL;
-	ft_printf("%s", id);
-	ft_printf("\n");
+	if (id)
+		ft_printf("%s\n", id);
 }
 
 void	rev_rotate(t_list **lst, char *id)
@@ -69,6 +69,6 @@ void	rev_rotate(t_list **lst, char *id)
 	last->previous = NULL;
 	(*lst)->previous = last;
 	*lst = last;
-	ft_printf("%s", id);
-	ft_printf("\n");
+	if (id)
+		ft_printf("%s\n", id);
 }
