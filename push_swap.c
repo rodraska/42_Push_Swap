@@ -69,6 +69,7 @@ int main(int ac, char **av)
 {
 	t_list *a;
 	t_list *b;
+	int		size;
 
 	if (ac == 1)
 		return (0);
@@ -79,7 +80,13 @@ int main(int ac, char **av)
 		printf("ERROR\n");
 		return (0);
 	}
-	sort(&a, &b);
+	size = lst_size(a);
+	if (size == 3)
+		sort_3(&a);
+	else if (size == 5)
+		sort_5(&a, &b);
+	else
+		sort(&a, &b);
 	/* lst_print(a);
 	ft_printf("\n");
 	lst_print(b); */

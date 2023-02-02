@@ -49,6 +49,7 @@ t_list	*check_error(int ac, char **av);
 int		lst_duplicate(t_list *lst, int n);
 
 void    sort_3(t_list **lst);
+void	sort_5(t_list **a, t_list **b);
 void    sort(t_list **a, t_list **b);
 t_list	*cost_min(t_list *a, t_list *b);
 int	ft_cost(t_list **lst, t_list *elem);
@@ -56,7 +57,7 @@ int	ft_bigger(int a, int b);
 int		best_path(t_list *a, t_list *b, t_list *elem, t_list *neigh);
 t_list	*best_neigh(t_list *a, t_list *b);
 void	ft_rotate(t_list **a, t_list **b, t_list *elem, t_list *neigh);
-void	last_sort(t_list **lst);
+void	min_top(t_list **lst);
 
 void    keep_rotating(t_list **a, t_list **b, t_list *elem, t_list *neigh);
 void    keep_rev_rotating(t_list **a, t_list **b, t_list *elem, t_list *neigh);

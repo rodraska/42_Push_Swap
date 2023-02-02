@@ -10,6 +10,17 @@ void    sort_3(t_list **lst)
 		swap(*lst, "sa");
 }
 
+void	sort_5(t_list **a, t_list **b)
+{
+	min_top(a);
+	push(a, b, "pb");
+	min_top(a);
+	push(a, b, "pb");
+	sort_3(a);
+	push(b, a, "pa");
+	push(b, a, "pa");
+}
+
 void    sort(t_list **a, t_list **b)
 {
 	t_list	*elem;
@@ -29,7 +40,7 @@ void    sort(t_list **a, t_list **b)
 		ft_rotate(a, b, elem, neigh);
 		push(b, a, "pa");
 	}
-	last_sort(a);
+	min_top(a);
 }
 
 void	ft_rotate(t_list **a, t_list **b, t_list *elem, t_list *neigh)
@@ -130,7 +141,7 @@ t_list	*best_neigh(t_list *a, t_list *b)
 	return (neigh);
 }
 
-void	last_sort(t_list **lst)
+void	min_top(t_list **lst)
 {
 	t_list	*min;
 	int		size;
