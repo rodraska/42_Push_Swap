@@ -41,15 +41,15 @@ void    keep_rev_rotating(t_list **a, t_list **b, t_list *elem, t_list *neigh)
 void    keep_rot_rev(t_list **a, t_list **b, t_list *elem, t_list *neigh)
 {
     while (*a != neigh)
-		rotate(a, "rra");
+		rotate(a, "ra");
 	while (*b != elem)
-		rev_rotate(b, "rb");
+		rev_rotate(b, "rrb");
 }
 
 void    keep_rev_rot(t_list **a, t_list **b, t_list *elem, t_list *neigh)
 {
     while (*a != neigh)
-		rev_rotate(a, "ra");
+		rev_rotate(a, "rra");
 	while (*b != elem)
-		rotate(b, "rrb");
+		rotate(b, "rb");
 }
