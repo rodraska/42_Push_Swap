@@ -132,21 +132,21 @@ t_list	*best_neigh(t_list *a, t_list *b)
 
 void	last_sort(t_list **lst)
 {
-	t_list	*max;
+	t_list	*min;
 	int		size;
-	int		size_max;
+	int		size_min;
 
-	max = lst_max(*lst);
+	min = lst_min(*lst);
 	size = lst_size(*lst);
-	size_max = lst_size(max);
-	if (size_max > size / 2)
+	size_min = lst_size(min);
+	if (size_min > size / 2)
 	{
-		while (*lst != max)
+		while (*lst != min)
 			rotate(lst, "ra");
 	}
 	else
 	{
-		while (*lst != max)
+		while (*lst != min)
 			rev_rotate(lst, "rra");
 	}
 }

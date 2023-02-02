@@ -80,8 +80,8 @@ int main(int ac, char **av)
 		return (0);
 	}
 	sort(&a, &b);
-	lst_print(a);
+	/* lst_print(a);
 	ft_printf("\n");
-	lst_print(b);
+	lst_print(b); */
 	return (0);
 }

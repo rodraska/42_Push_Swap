@@ -35,6 +35,20 @@ t_list	*lst_max(t_list *lst)
 	return (max);
 }
 
+t_list	*lst_min(t_list *lst)
+{
+	t_list	*min;
+
+	min = lst;
+	while (lst)
+	{
+		if (lst->value < min->value)
+			min = lst;
+		lst = lst->next;
+	}
+	return (min);
+}
+
 float	lst_average(t_list *lst)
 {
 	float	total;

@@ -36,6 +36,7 @@ void	lst_clear(t_list **lst);
 int		lst_size(t_list *lst);
 float	lst_average(t_list *lst);
 t_list	*lst_max(t_list *lst);
+t_list	*lst_min(t_list *lst);
 void	lst_print(t_list *lst);
 
 void	swap(t_list *lst, char *id);
