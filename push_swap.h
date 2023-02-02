@@ -6,7 +6,7 @@
 /*   By: rreis-de <rreis-de@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 09:55:51 by rreis-de          #+#    #+#             */
-/*   Updated: 2023/01/31 18:56:09 by rreis-de         ###   ########.fr       */
+/*   Updated: 2023/02/02 14:51:17 by rreis-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ t_list	*lstfirst(t_list *lst);
 void	lst_clear(t_list **lst);
 int		lst_size(t_list *lst);
 float	lst_average(t_list *lst);
-int		lst_max(t_list *lst);
+t_list	*lst_max(t_list *lst);
 void	lst_print(t_list *lst);
 
 void	swap(t_list *lst, char *id);
@@ -56,6 +56,12 @@ int		best_path(t_list *a, t_list *b, t_list *elem, t_list *neigh);
 t_list	*best_neigh(t_list *a, t_list *b);
 void	ft_rotate(t_list **a, t_list **b, t_list *elem, t_list *neigh);
 void	last_sort(t_list **lst);
+
+void    keep_rotating(t_list **a, t_list **b, t_list *elem, t_list *neigh);
+void    keep_rev_rotating(t_list **a, t_list **b, t_list *elem, t_list *neigh);
+void    keep_rot_rev(t_list **a, t_list **b, t_list *elem, t_list *neigh);
+void    keep_rev_rot(t_list **a, t_list **b, t_list *elem, t_list *neigh);
+int	check_ratio(t_list *a, float ratio);
 
 
 #endif

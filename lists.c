@@ -6,7 +6,7 @@
 /*   By: rreis-de <rreis-de@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 10:00:09 by rreis-de          #+#    #+#             */
-/*   Updated: 2023/01/31 10:53:06 by rreis-de         ###   ########.fr       */
+/*   Updated: 2023/02/02 14:26:34 by rreis-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,15 @@ void	lst_print(t_list *lst)
 	}
 }
 
-int		lst_max(t_list *lst)
+t_list	*lst_max(t_list *lst)
 {
-	int	max;
+	t_list	*max;
 
-	max = 0;
+	max = lst;
 	while (lst)
 	{
-		if (lst->value > max)
-			max = lst->value;
+		if (lst->value > max->value)
+			max = lst;
 		lst = lst->next;
 	}
 	return (max);

@@ -6,7 +6,7 @@
 #    By: rreis-de <rreis-de@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/30 14:18:03 by rreis-de          #+#    #+#              #
-#    Updated: 2023/01/31 15:09:43 by rreis-de         ###   ########.fr        #
+#    Updated: 2023/02/02 14:22:41 by rreis-de         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ SRCS = algo.c \
 		lists.c \
 		moves.c \
 		push_swap.c \
+		others.c \
 		printf/ft_letters.c \
 		printf/ft_numbers.c \
 		printf/ft_printf.c \

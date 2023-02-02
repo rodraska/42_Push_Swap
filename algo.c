@@ -36,43 +36,13 @@ void	ft_rotate(t_list **a, t_list **b, t_list *elem, t_list *neigh)
 {
 	
 	if (elem->move == 0 && neigh->move == 0)
-	{
-		while (*a != neigh && *b != elem)
-		{
-			rotate(a, "rr");
-			rotate(b, NULL);
-		}
-		while (*a != neigh)
-			rotate(a, "ra");
-		while (*b != elem)
-			rotate(b, "rb");
-	}
+		keep_rotating(a, b, elem, neigh);
 	else if (elem->move == 1 && neigh->move == 1)
-	{
-		while (*a != neigh && *b != elem)
-		{
-			rev_rotate(a, "rrr");
-			rev_rotate(b, NULL);
-		}
-		while (*a != neigh)
-			rev_rotate(a, "rra");
-		while (*b != elem)
-			rev_rotate(b, "rrb");
-	}
-	else if (elem->move == 0 && neigh->move == 1)
-	{
-		while (*a != neigh)
-			rev_rotate(a, "ra");
-		while (*b != elem)
-			rotate(b, "rrb");
-	}
+		keep_rev_rotating(a, b, elem, neigh);
 	else if (elem->move == 1 && neigh->move == 0)
-	{
-		while (*a != neigh)
-			rotate(a, "rra");
-		while (*b != elem)
-			rev_rotate(b, "rb");
-	}
+		keep_rot_rev(a, b, elem, neigh);
+	else if (elem->move == 0 && neigh->move == 1)
+		keep_rev_rot(a, b, elem, neigh);
 }
 
 int	ft_bigger(int a, int b)
@@ -162,9 +132,21 @@ t_list	*best_neigh(t_list *a, t_list *b)
 
 void	last_sort(t_list **lst)
 {
-	int	max;
+	t_list	*max;
+	int		size;
+	int		size_max;
 
 	max = lst_max(*lst);
-	while (lstlast(*lst)->value != max)
-		rotate(lst, "ra");
+	size = lst_size(*lst);
+	size_max = lst_size(max);
+	if (size_max > size / 2)
+	{
+		while (*lst != max)
+			rotate(lst, "ra");
+	}
+	else
+	{
+		while (*lst != max)
+			rev_rotate(lst, "rra");
+	}
 }
