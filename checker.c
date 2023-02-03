@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rreis-de <rreis-de@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/16 10:16:03 by rreis-de          #+#    #+#             */
-/*   Updated: 2023/02/03 14:21:24 by rreis-de         ###   ########.fr       */
+/*   Created: 2023/02/03 14:22:35 by rreis-de          #+#    #+#             */
+/*   Updated: 2023/02/03 14:45:14 by rreis-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
 t_list	*check_error(int ac, char **av)
 {
@@ -80,12 +80,4 @@ int	main(int ac, char **av)
 		printf("Error\n");
 		return (0);
 	}
-	size = lst_size(a);
-	if (size == 3)
-		sort_3(&a);
-	else if (size == 5)
-		sort_5(&a, &b);
-	else
-		sort(&a, &b);
-	return (0);
 }
