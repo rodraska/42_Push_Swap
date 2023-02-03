@@ -6,7 +6,7 @@
 /*   By: rreis-de <rreis-de@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:16:03 by rreis-de          #+#    #+#             */
-/*   Updated: 2023/02/02 14:31:59 by rreis-de         ###   ########.fr       */
+/*   Updated: 2023/02/03 12:06:28 by rreis-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_list	*check_error(int ac, char **av)
 		while (av[i][++j])
 		{
 			if (num == 0 && (av[i][0] != 48 || av[i][1]))
-			return (NULL);
+				return (NULL);
 			if (num > 2147483647 || num < -2147483648)
 				return (NULL);
 		}
@@ -39,7 +39,7 @@ t_list	*check_error(int ac, char **av)
 	return (lst);
 }
 
-long int	ft_atoi(char *str)
+long	ft_atoi(char *str)
 {
 	int		i;
 	int		sign;
@@ -65,10 +65,10 @@ long int	ft_atoi(char *str)
 	return (num);
 }
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
-	t_list *a;
-	t_list *b;
+	t_list	*a;
+	t_list	*b;
 	int		size;
 
 	if (ac == 1)
@@ -77,7 +77,7 @@ int main(int ac, char **av)
 	b = NULL;
 	if (a == NULL)
 	{
-		printf("ERROR\n");
+		printf("Error\n");
 		return (0);
 	}
 	size = lst_size(a);
@@ -87,8 +87,5 @@ int main(int ac, char **av)
 		sort_5(&a, &b);
 	else
 		sort(&a, &b);
-	/* lst_print(a);
-	ft_printf("\n");
-	lst_print(b); */
 	return (0);
 }

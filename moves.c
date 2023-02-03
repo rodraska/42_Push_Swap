@@ -6,7 +6,7 @@
 /*   By: rreis-de <rreis-de@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 14:49:55 by rreis-de          #+#    #+#             */
-/*   Updated: 2023/01/31 19:04:59 by rreis-de         ###   ########.fr       */
+/*   Updated: 2023/02/03 11:46:40 by rreis-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	rotate(t_list **lst, char *id)
 void	rev_rotate(t_list **lst, char *id)
 {
 	t_list	*last;
-	
+
 	last = lstlast(*lst);
 	if (last->previous)
 		last->previous->next = NULL;

@@ -6,7 +6,7 @@
 #    By: rreis-de <rreis-de@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/30 14:18:03 by rreis-de          #+#    #+#              #
-#    Updated: 2023/02/02 14:22:41 by rreis-de         ###   ########.fr        #
+#    Updated: 2023/02/03 12:05:44 by rreis-de         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,10 @@ CFLAGS = -Wall -Wextra -Werror #-fsanitize=address -g3
 RM = rm -f
 
 SRCS = algo.c \
+		algo2.c \
 		lists.c \
+		lists2.c \
+		lists3.c \
 		moves.c \
 		push_swap.c \
 		others.c \
