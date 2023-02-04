@@ -6,7 +6,7 @@
 /*   By: rreis-de <rreis-de@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:16:03 by rreis-de          #+#    #+#             */
-/*   Updated: 2023/02/03 14:21:24 by rreis-de         ###   ########.fr       */
+/*   Updated: 2023/02/04 16:42:49 by rreis-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ int	main(int ac, char **av)
 	b = NULL;
 	if (a == NULL)
 	{
-		printf("Error\n");
+		ft_printf("Error\n");
 		return (0);
 	}
 	size = lst_size(a);
@@ -87,5 +87,7 @@ int	main(int ac, char **av)
 		sort_5(&a, &b);
 	else
 		sort(&a, &b);
+	lst_clear(&a);
+	lst_clear(&b);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: rreis-de <rreis-de@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 14:48:15 by rreis-de          #+#    #+#             */
-/*   Updated: 2023/02/03 15:53:35 by rreis-de         ###   ########.fr       */
+/*   Updated: 2023/02/04 17:01:12 by rreis-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 void    checker_moves(t_list **a, t_list **b, char *move)
 {
     if (move[0] == 's' && move[1] == 'a')
-        checker_swap(a);
+        checker_swap(*a);
     else if (move[0] == 's' && move[1] == 'b')
-        checker_swap(b);
+        checker_swap(*b);
     else if (move[0] == 'p' && move[1] == 'a')
         checker_push(b, a);
     else if (move[0] == 'p' && move[1] == 'b')
@@ -26,17 +26,17 @@ void    checker_moves(t_list **a, t_list **b, char *move)
         checker_rotate(a, NULL);
     else if (move[0] == 'r' && move[1] == 'b')
         checker_rotate(NULL, b);
-    else if (move[1] == 'r' && !move[2])
+    else if (move[1] == 'r' && !move[3])
         checker_rotate(a, b);
     else if (move[0] == 'r' && move[2] == 'a')
-        cheker_rev_rotate(a, NULL);
+        checker_rev_rotate(a, NULL);
     else if (move[0] == 'r' && move[2] == 'b')
-        cheker_rev_rotate(NULL, b);
+        checker_rev_rotate(NULL, b);
     else if (move[0] == 'r' && move[2] == 'r')
-        cheker_rev_rotate(a, b);
+        checker_rev_rotate(a, b);
 }
 
-void    checker_swap(t_list **lst)
+void    checker_swap(t_list *lst)
 {
     int		tmp;
 

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   checker_main.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rreis-de <rreis-de@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 14:22:35 by rreis-de          #+#    #+#             */
-/*   Updated: 2023/02/03 14:45:14 by rreis-de         ###   ########.fr       */
+/*   Updated: 2023/02/04 17:50:47 by rreis-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,15 +69,20 @@ int	main(int ac, char **av)
 {
 	t_list	*a;
 	t_list	*b;
-	int		size;
 
 	if (ac == 1)
 		return (0);
 	a = check_error(ac, av);
+	//lst_print(a);
 	b = NULL;
 	if (a == NULL)
 	{
-		printf("Error\n");
+		ft_printf("Error\n");
 		return (0);
 	}
+	read_moves(&a, &b);
+	//ft_printf("====================\n");
+	lst_clear(&a);
+	lst_clear(&b);
+	return (0);
 }

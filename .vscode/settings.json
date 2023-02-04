@@ -1,7 +1,8 @@
 {
     "files.associations": {
         "push_swap.h": "c",
-        "ft_printf.h": "c"
+        "ft_printf.h": "c",
+        "checker.h": "c"
     },
     "cmake.sourceDirectory": "${workspaceFolder}/push_swap_visualizer/build/_deps/catch2-src/.conan/test_package"
 }
