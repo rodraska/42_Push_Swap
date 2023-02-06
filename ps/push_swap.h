@@ -6,7 +6,7 @@
 /*   By: rreis-de <rreis-de@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 09:55:51 by rreis-de          #+#    #+#             */
-/*   Updated: 2023/02/06 16:21:27 by rreis-de         ###   ########.fr       */
+/*   Updated: 2023/02/06 17:58:01 by rreis-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ t_list	*lstlast(t_list *lst);
 void	lst_print(t_list *lst);
 int		lst_size(t_list *lst);
 int		lst_duplicate(t_list *lst, int n);
+int		check_order(t_list *a, t_list *b);
 
 void	swap(t_list *lst, char *id);
 void	push(t_list **src, t_list **dst, char *id);
@@ -63,5 +64,6 @@ int		ft_bigger(int a, int b);
 
 t_list	*check_error(int ac, char **av);
 long	ft_atoi(char *str);
+void	general_sort(t_list **a, t_list **b);
 
 #endif

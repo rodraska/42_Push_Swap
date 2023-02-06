@@ -6,7 +6,7 @@
 /*   By: rreis-de <rreis-de@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:16:03 by rreis-de          #+#    #+#             */
-/*   Updated: 2023/02/06 16:07:04 by rreis-de         ###   ########.fr       */
+/*   Updated: 2023/02/06 17:59:59 by rreis-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,11 +66,23 @@ long	ft_atoi(char *str)
 	return (num);
 }
 
+void	general_sort(t_list **a, t_list **b)
+{
+	int	size;
+
+	size = lst_size(*a);
+	if (size == 3)
+		sort_3(a);
+	else if (size == 5)
+		sort_5(a, b);
+	else
+		sort(a, b);
+}
+
 int	main(int ac, char **av)
 {
 	t_list	*a;
 	t_list	*b;
-	int		size;
 
 	if (ac == 1)
 		return (0);
@@ -82,13 +94,12 @@ int	main(int ac, char **av)
 		lst_clear(&a);
 		return (0);
 	}
-	size = lst_size(a);
-	if (size == 3)
-		sort_3(&a);
-	else if (size == 5)
-		sort_5(&a, &b);
-	else
-		sort(&a, &b);
+	if (check_order(a, b))
+	{
+		lst_clear(&a);
+		return (0);
+	}
+	general_sort(&a, &b);
 	lst_clear(&a);
 	lst_clear(&b);
 	return (0);

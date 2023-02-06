@@ -6,7 +6,7 @@
 /*   By: rreis-de <rreis-de@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 11:36:01 by rreis-de          #+#    #+#             */
-/*   Updated: 2023/02/03 11:46:07 by rreis-de         ###   ########.fr       */
+/*   Updated: 2023/02/06 17:57:21 by rreis-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,17 @@ int	lst_duplicate(t_list *lst, int n)
 		lst = lst->next;
 	}
 	return (0);
+}
+
+int	check_order(t_list *a, t_list *b)
+{
+	if (lst_size(b) != 0)
+		return (0);
+	while (a->next)
+	{
+		if (a->value > a->next->value)
+			return (0);
+		a = a->next;
+	}
+	return (1);
 }
