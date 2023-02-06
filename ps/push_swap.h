@@ -6,7 +6,7 @@
 /*   By: rreis-de <rreis-de@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 09:55:51 by rreis-de          #+#    #+#             */
-/*   Updated: 2023/02/03 14:35:16 by rreis-de         ###   ########.fr       */
+/*   Updated: 2023/02/06 16:21:27 by rreis-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
-# include "printf/ft_printf.h"
+# include "../printf/ft_printf.h"
 
 typedef struct s_list
 {

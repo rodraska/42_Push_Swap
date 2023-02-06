@@ -6,7 +6,7 @@
 /*   By: rreis-de <rreis-de@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:16:03 by rreis-de          #+#    #+#             */
-/*   Updated: 2023/02/04 16:42:49 by rreis-de         ###   ########.fr       */
+/*   Updated: 2023/02/06 16:07:04 by rreis-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,14 @@ t_list	*check_error(int ac, char **av)
 		num = ft_atoi(av[i]);
 		while (av[i][++j])
 		{
-			if (num == 0 && (av[i][0] != 48 || av[i][1]))
+			if ((num == 0 && (av[i][0] != 48 || av[i][1]))
+			|| (num > 2147483647 || num < -2147483648)
+			|| (lst_duplicate(lst, num)))
+			{
+				lst_clear(&lst);
 				return (NULL);
-			if (num > 2147483647 || num < -2147483648)
-				return (NULL);
+			}
 		}
-		if (lst_duplicate(lst, num))
-			return (NULL);
 		lst_add_back(&lst, num);
 	}
 	return (lst);
@@ -78,6 +79,7 @@ int	main(int ac, char **av)
 	if (a == NULL)
 	{
 		ft_printf("Error\n");
+		lst_clear(&a);
 		return (0);
 	}
 	size = lst_size(a);

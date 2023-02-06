@@ -6,7 +6,7 @@
 /*   By: rreis-de <rreis-de@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 11:42:26 by rreis-de          #+#    #+#             */
-/*   Updated: 2023/02/03 11:45:29 by rreis-de         ###   ########.fr       */
+/*   Updated: 2023/02/06 15:38:09 by rreis-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	ft_rotate(t_list **a, t_list **b, t_list *elem, t_list *neigh)
 {
-
 	if (elem->move == 0 && neigh->move == 0)
 		keep_rotating(a, b, elem, neigh);
 	else if (elem->move == 1 && neigh->move == 1)
