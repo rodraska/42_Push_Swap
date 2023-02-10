@@ -6,7 +6,7 @@
 /*   By: rreis-de <rreis-de@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 09:55:51 by rreis-de          #+#    #+#             */
-/*   Updated: 2023/02/06 17:58:01 by rreis-de         ###   ########.fr       */
+/*   Updated: 2023/02/10 15:31:54 by rreis-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,5 +65,6 @@ int		ft_bigger(int a, int b);
 t_list	*check_error(int ac, char **av);
 long	ft_atoi(char *str);
 void	general_sort(t_list **a, t_list **b);
+int		is_digit(char *s);
 
 #endif

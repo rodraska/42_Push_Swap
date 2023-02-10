@@ -6,7 +6,7 @@
 /*   By: rreis-de <rreis-de@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 11:42:26 by rreis-de          #+#    #+#             */
-/*   Updated: 2023/02/06 15:38:09 by rreis-de         ###   ########.fr       */
+/*   Updated: 2023/02/10 17:02:45 by rreis-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,38 @@ int	best_path(t_list *a, t_list *b, t_list *elem, t_list *neigh)
 		return (cost_a + cost_b);
 }
 
+/* t_list	*best_neigh(t_list *a, t_list *b)
+{
+	ft_printf("ola");
+	
+	t_list	*neigh;
+	long 	dif;
+
+	dif = 9223372036854775807;
+	// neigh = a;
+	while (a)
+	{
+		ft_printf("bv: %d\n", b->value);
+		ft_printf("av: %d\n", a->value);
+		ft_printf("a-b %d\n", a->value - b->value);
+		if ((long)(a->value - b->value) < dif && (long)(a->value - b->value) > 0)
+		{
+			neigh = a;
+			dif = a->value - b->value;
+		}
+		a = a->next;
+	}
+	ft_printf("my n: %d\n", neigh->value);
+	return (neigh);
+} */
+
 t_list	*best_neigh(t_list *a, t_list *b)
 {
 	t_list	*neigh;
 	int		dif;
 
 	dif = 2147483647;
+	neigh = a;
 	while (a)
 	{
 		if (a->value - b->value < dif && a->value - b->value > 0)
