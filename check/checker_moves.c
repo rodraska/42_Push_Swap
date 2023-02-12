@@ -69,7 +69,7 @@ void	checker_rotate(t_list **a, t_list **b)
 	t_list	*last;
 	t_list	*tmp;
 
-	if (a)
+	if (a && lst_size(*a) > 1)
 	{
 		tmp = (*a)->next;
 		last = lstlast(*a);
@@ -79,7 +79,7 @@ void	checker_rotate(t_list **a, t_list **b)
 		*a = tmp;
 		(*a)->previous = NULL;
 	}
-	if (b)
+	if (b && lst_size(*b) > 1)
 	{
 		tmp = (*b)->next;
 		last = lstlast(*b);
@@ -95,7 +95,7 @@ void	checker_rev_rotate(t_list **a, t_list **b)
 {
 	t_list	*last;
 
-	if (a)
+	if (a && lst_size(*a) > 1)
 	{
 		last = lstlast(*a);
 		if (last->previous)
@@ -105,7 +105,7 @@ void	checker_rev_rotate(t_list **a, t_list **b)
 		(*a)->previous = last;
 		*a = last;
 	}
-	if (b)
+	if (b && lst_size(*b) > 1)
 	{
 		last = lstlast(*b);
 		if (last->previous)
