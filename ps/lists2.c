@@ -40,9 +40,9 @@ t_list	*lst_min(t_list *lst)
 	return (min);
 }
 
-float	lst_average(t_list *lst)
+double	lst_average(t_list *lst)
 {
-	float	total;
+	double	total;
 	int		size;
 
 	size = lst_size(lst);

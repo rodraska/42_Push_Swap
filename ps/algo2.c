@@ -39,32 +39,26 @@ int	best_path(t_list *a, t_list *b, t_list *elem, t_list *neigh)
 		return (cost_a + cost_b);
 }
 
-/* t_list	*best_neigh(t_list *a, t_list *b)
+t_list	*best_neigh(t_list *a, t_list *b)
 {
-	ft_printf("ola");
-	
 	t_list	*neigh;
-	long 	dif;
+	double	dif;
 
-	dif = 9223372036854775807;
-	// neigh = a;
+	dif = 8294967300;
+	neigh = a;
 	while (a)
 	{
-		ft_printf("bv: %d\n", b->value);
-		ft_printf("av: %d\n", a->value);
-		ft_printf("a-b %d\n", a->value - b->value);
-		if ((long)(a->value - b->value) < dif && (long)(a->value - b->value) > 0)
+		if (abs_sub(a->value, b->value) < dif && a->value > b->value)
 		{
 			neigh = a;
-			dif = a->value - b->value;
+			dif = abs_sub(a->value, b->value);
 		}
 		a = a->next;
 	}
-	ft_printf("my n: %d\n", neigh->value);
 	return (neigh);
-} */
+}
 
-t_list	*best_neigh(t_list *a, t_list *b)
+/* t_list	*best_neigh(t_list *a, t_list *b)
 {
 	t_list	*neigh;
 	int		dif;
@@ -81,7 +75,7 @@ t_list	*best_neigh(t_list *a, t_list *b)
 		a = a->next;
 	}
 	return (neigh);
-}
+} */
 
 void	min_top(t_list **lst)
 {

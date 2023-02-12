@@ -57,3 +57,11 @@ int	check_order(t_list *a, t_list *b)
 	}
 	return (1);
 }
+
+double	abs_sub(double a, double b)
+{
+	if (a >= b)
+		return (a - b);
+	else
+		return (b - a);
+}

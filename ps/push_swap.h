@@ -33,13 +33,14 @@ void	lst_add_front(t_list **lst, int value);
 t_list	*lstnew(int value);
 t_list	*lst_max(t_list *lst);
 t_list	*lst_min(t_list *lst);
-float	lst_average(t_list *lst);
+double	lst_average(t_list *lst);
 t_list	*lstfirst(t_list *lst);
 t_list	*lstlast(t_list *lst);
 void	lst_print(t_list *lst);
 int		lst_size(t_list *lst);
 int		lst_duplicate(t_list *lst, int n);
 int		check_order(t_list *a, t_list *b);
+double	abs_sub(double a, double b);
 
 void	swap(t_list *lst, char *id);
 void	push(t_list **src, t_list **dst, char *id);
