@@ -15,3 +15,6 @@ We had at our disposal 2 stacks and a set of moves to manipulate both stacks. Th
 - rrb (reverse rotate b): Shift down all elements on stack b. last element becomes first.
 - rrr : rra & rrb at the same time.
 
+At the beggining of the program all elements were contained in stack a and stack b was empty and by the end of the program all elements were sorted in ascending order in stack a. The set of integer values could contain both positive and negative values but no duplicate values.
+
+The algorithm I developed worked in the following way:
