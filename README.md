@@ -23,3 +23,6 @@ First, I calculated the average value for the elements in stack a. If the elemen
 if the element was above thr average, I rotated up all elements (ra). If the element was pushed to stack b I would calculate the average again, with the element that remained in stack a.
 I repeated this process until there was only one element left in stack a.
 The purpose of this process was to leave stack b with an organized tendency, with the lower value element tendentially at the bottom and high value elements tendentially  at the top. This facilitated the next part of the algorithm.
+
+After having the stack b filled, I proceeded to pass them again to stack a using a cost function. This function consists in pushing to the stack a the element with the least cost associated with it.
+Because this is the last step of the algorithm, the elements will have to be passed in order to the stack a.
