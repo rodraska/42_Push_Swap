@@ -6,7 +6,7 @@
 /*   By: rreis-de <rreis-de@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:16:03 by rreis-de          #+#    #+#             */
-/*   Updated: 2023/02/10 15:44:00 by rreis-de         ###   ########.fr       */
+/*   Updated: 2023/02/28 16:59:26 by rreis-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,6 +120,7 @@ int	main(int ac, char **av)
 		;
 	else
 		general_sort(&a, &b);
+	lst_print(a);
 	lst_clear(&a);
 	lst_clear(&b);
 	return (0);
